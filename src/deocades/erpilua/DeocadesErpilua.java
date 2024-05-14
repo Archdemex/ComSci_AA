@@ -15,7 +15,8 @@ public class DeocadesErpilua {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Hallo");
+        System.out.println("Hallo World");
+        System.out.println("If this works im happy");
     }
     
 }
