@@ -17,6 +17,7 @@ public class DeocadesErpilua {
         // TODO code application logic here
         System.out.println("Hallo World");
         System.out.println("If this works im happy");
+        System.out.println("Testing if its mirrored");
     }
     
 }
