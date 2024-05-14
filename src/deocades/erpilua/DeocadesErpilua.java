@@ -18,6 +18,7 @@ public class DeocadesErpilua {
         System.out.println("Hallo World");
         System.out.println("If this works im happy");
         System.out.println("Testing if its mirrored");
+        System.out.println("Haii");
     }
     
 }
