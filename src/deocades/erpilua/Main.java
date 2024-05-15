@@ -4,6 +4,8 @@
  */
 package deocades.erpilua;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Rajah Joevil
@@ -46,13 +48,18 @@ public class Main extends javax.swing.JFrame {
         MakeReserv.setFont(new java.awt.Font("Poor Richard", 0, 36)); // NOI18N
         MakeReserv.setText("Make a Reservation");
         MakeReserv.setToolTipText("");
-        MakeReserv.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
+        MakeReserv.setBorder(null);
+        MakeReserv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MakeReservActionPerformed(evt);
+            }
+        });
         getContentPane().add(MakeReserv, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 330, 50));
 
         ViewReserv.setFont(new java.awt.Font("Poor Richard", 0, 36)); // NOI18N
         ViewReserv.setText("View Reservation");
         ViewReserv.setToolTipText("");
-        ViewReserv.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
+        ViewReserv.setBorder(null);
         ViewReserv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ViewReservActionPerformed(evt);
@@ -63,24 +70,24 @@ public class Main extends javax.swing.JFrame {
         Exit.setFont(new java.awt.Font("Poor Richard", 0, 24)); // NOI18N
         Exit.setText("Exit");
         Exit.setToolTipText("");
-        Exit.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
+        Exit.setBorder(null);
         Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitActionPerformed(evt);
             }
         });
-        getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 80, 20));
+        getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 80, 30));
 
         CancelReserv.setFont(new java.awt.Font("Poor Richard", 0, 36)); // NOI18N
         CancelReserv.setText("Cancel a Reservation");
         CancelReserv.setToolTipText("");
-        CancelReserv.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
+        CancelReserv.setBorder(null);
         getContentPane().add(CancelReserv, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 330, 50));
 
         GenerateReport.setFont(new java.awt.Font("Poor Richard", 0, 36)); // NOI18N
         GenerateReport.setText("Generate Report");
         GenerateReport.setToolTipText("");
-        GenerateReport.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
+        GenerateReport.setBorder(null);
         GenerateReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GenerateReportActionPerformed(evt);
@@ -103,12 +110,23 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_ViewReservActionPerformed
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
-        // TODO add your handling code here:
+        int confirm
+                = JOptionPane.showConfirmDialog(this, "Are you sure you want to exit?", "Confirm", JOptionPane.YES_NO_OPTION);
+        if(confirm == 0){
+            System.exit(0);
+        }
     }//GEN-LAST:event_ExitActionPerformed
 
     private void GenerateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerateReportActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_GenerateReportActionPerformed
+
+    private void MakeReservActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MakeReservActionPerformed
+        // TODO add your handling code here:
+        MakeReservation NewWind1 = new MakeReservation();
+        NewWind1.show();
+        dispose();
+    }//GEN-LAST:event_MakeReservActionPerformed
 
     /**
      * @param args the command line arguments
