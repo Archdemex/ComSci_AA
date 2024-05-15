@@ -4,6 +4,11 @@
  */
 package deocades.erpilua;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -139,7 +144,8 @@ public class MakeReservation extends javax.swing.JFrame {
         });
         jPanel1.add(Confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 200, 60));
 
-        BackGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deocades/erpilua/MRes.jpeg"))); // NOI18N
+        BackGround.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BackGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deocades/erpilua/MReserve.jpeg"))); // NOI18N
         jPanel1.add(BackGround, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 390));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 390));
@@ -163,9 +169,26 @@ public class MakeReservation extends javax.swing.JFrame {
         // TODO add your handling code here:int confirm
         int confirm = JOptionPane.showConfirmDialog(this, "Are you sure the information is correct?", "Confirm", JOptionPane.YES_NO_OPTION);
         if (confirm == 0) {
+            String Name = NameIn.getText(), Number = NumIn.getText(), Date = DateIn.getText(), 
+                    Adults = AdultIn.getText(),Children = ChildIn.getText();
+            try {
+                FileWriter FW = new FileWriter("LogBook.txt",true);
+                PrintWriter PW = new PrintWriter(FW);
+
+                PW.println(Name);
+                PW.println(Number);
+                PW.println(Date);
+                PW.println(Adults);
+                PW.println(Children);
+                PW.println();
+                
+                PW.close();
+            } catch (IOException e) {
+                System.out.print("Error");
+            }
             Main BackWin = new Main();
             BackWin.show();
-            JOptionPane.showConfirmDialog(null, "Reservation Success!");
+            JOptionPane.showInternalMessageDialog(null, "Reservation Success!");
             dispose();
         }
     }//GEN-LAST:event_ConfirmActionPerformed

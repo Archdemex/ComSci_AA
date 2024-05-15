@@ -257,8 +257,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="BackGround">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/deocades/erpilua/MRes.jpeg"/>
+              <Image iconType="3" name="/deocades/erpilua/MReserve.jpeg"/>
             </Property>
           </Properties>
           <Constraints>
