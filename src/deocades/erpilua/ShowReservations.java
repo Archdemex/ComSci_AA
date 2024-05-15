@@ -94,7 +94,6 @@ public class ShowReservations extends javax.swing.JFrame {
 
     private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
         // TODO add your handling code here:
-        System.out.println("Hi");
         try{
             FileReader FR = new FileReader("LogBook.txt");
             BufferedReader BR = new BufferedReader(FR) ;
@@ -106,7 +105,7 @@ public class ShowReservations extends javax.swing.JFrame {
                 BR.close();
             }
         }catch(IOException e){
-            System.out.println("File not found :-:");
+            System.out.println("File not found ;-;");
         }
     }//GEN-LAST:event_formWindowGainedFocus
 
