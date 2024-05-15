@@ -112,7 +112,7 @@ public class Main extends javax.swing.JFrame {
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         int confirm
                 = JOptionPane.showConfirmDialog(this, "Are you sure you want to exit?", "Confirm", JOptionPane.YES_NO_OPTION);
-        if(confirm == 0){
+        if (confirm == 0) {
             System.exit(0);
         }
     }//GEN-LAST:event_ExitActionPerformed
