@@ -107,6 +107,9 @@ public class Main extends javax.swing.JFrame {
 
     private void ViewReservActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewReservActionPerformed
         // TODO add your handling code here:
+        ShowReservations NewWind3 = new ShowReservations();
+        NewWind3.show();
+        dispose();
     }//GEN-LAST:event_ViewReservActionPerformed
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed

@@ -175,11 +175,11 @@ public class MakeReservation extends javax.swing.JFrame {
                 FileWriter FW = new FileWriter("LogBook.txt",true);
                 PrintWriter PW = new PrintWriter(FW);
 
-                PW.println(Name);
-                PW.println(Number);
-                PW.println(Date);
-                PW.println(Adults);
-                PW.println(Children);
+                PW.println("Name: " + Name);
+                PW.println("Number: " + Number);
+                PW.println("Date: " + Date);
+                PW.println("Number of Adults: " + Adults);
+                PW.println("Number of Children" + Children);
                 PW.println();
                 
                 PW.close();
