@@ -4,6 +4,10 @@
  */
 package deocades.erpilua;
 
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JOptionPane;
 
 /**
@@ -38,6 +42,13 @@ public class Main extends javax.swing.JFrame {
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowFocusListener(new java.awt.event.WindowFocusListener() {
+            public void windowGainedFocus(java.awt.event.WindowEvent evt) {
+                formWindowGainedFocus(evt);
+            }
+            public void windowLostFocus(java.awt.event.WindowEvent evt) {
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Title.setFont(new java.awt.Font("Poor Richard", 1, 48)); // NOI18N
@@ -105,6 +116,18 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    Clip clip;
+    private void BGMusic(String Path) {
+        try {
+            File MDirectory = new File(Path);
+            AudioInputStream AudioIn = AudioSystem.getAudioInputStream(MDirectory);
+            clip = AudioSystem.getClip();
+            clip.open(AudioIn);
+            clip.start();
+        } catch (Exception e) {
+            System.out.print("e");
+        }
+    }
     private void ViewReservActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewReservActionPerformed
         // TODO add your handling code here:
         ShowReservations NewWind3 = new ShowReservations();
@@ -130,6 +153,11 @@ public class Main extends javax.swing.JFrame {
         NewWind1.show();
         dispose();
     }//GEN-LAST:event_MakeReservActionPerformed
+
+    private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
+        // TODO add your handling code here:
+        BGMusic("src\\deocades\\erpilua\\ACT.wav");
+    }//GEN-LAST:event_formWindowGainedFocus
 
     /**
      * @param args the command line arguments
