@@ -85,8 +85,8 @@ public class MakeReservation extends javax.swing.JFrame {
         CNum.setFont(new java.awt.Font("Poor Richard", 0, 24)); // NOI18N
         CNum.setForeground(new java.awt.Color(255, 255, 255));
         CNum.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        CNum.setText("Number:");
-        jPanel1.add(CNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 230, -1));
+        CNum.setText("Contact Number:");
+        jPanel1.add(CNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 230, -1));
 
         Adults.setFont(new java.awt.Font("Poor Richard", 0, 24)); // NOI18N
         Adults.setForeground(new java.awt.Color(255, 255, 255));
@@ -180,6 +180,7 @@ public class MakeReservation extends javax.swing.JFrame {
                 PW.println("Date: " + Date);
                 PW.println("Number of Adults: " + Adults);
                 PW.println("Number of Children" + Children);
+                PW.println();
                 
                 PW.close();
             } catch (IOException e) {

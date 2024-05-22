@@ -19,7 +19,7 @@ public class ShowReservations extends javax.swing.JFrame {
      */
     public ShowReservations() {
         initComponents();
-        Display.setBackground(new java.awt.Color(0,0,0,1));
+        Display.setBackground(new java.awt.Color(0, 0, 0, 1));
     }
 
     /**
@@ -89,27 +89,26 @@ public class ShowReservations extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanel1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPanel1FocusGained
-        
+
     }//GEN-LAST:event_jPanel1FocusGained
 
     private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
         // TODO add your handling code here:
-        System.out.println("Hi");
-        try{
+        try {
             FileReader FR = new FileReader("LogBook.txt");
-            BufferedReader BR = new BufferedReader(FR) ;
+            BufferedReader BR = new BufferedReader(FR);
             String message = "";
-            
+
             int CharNum = BR.read();
-                
-                while (CharNum != -1) {
-                    char location = (char) CharNum;
-                    message = message + location;
-                    Display.setText(message);
-                    CharNum = BR.read();
-                }
-            
-        }catch(IOException e){
+
+            while (CharNum != -1) {
+                char location = (char) CharNum;
+                message = message + location;
+                Display.setText(message);
+                CharNum = BR.read();
+            }
+
+        } catch (IOException e) {
             System.out.println("File not found :-:");
         }
     }//GEN-LAST:event_formWindowGainedFocus
