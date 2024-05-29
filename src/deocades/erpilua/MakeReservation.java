@@ -179,7 +179,7 @@ public class MakeReservation extends javax.swing.JFrame {
                 PW.println("Number: " + Number);
                 PW.println("Date: " + Date);
                 PW.println("Number of Adults: " + Adults);
-                PW.println("Number of Children" + Children);
+                PW.println("Number of Children: " + Children);
                 PW.println();
                 
                 PW.close();

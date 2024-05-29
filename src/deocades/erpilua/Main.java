@@ -132,6 +132,7 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         ShowReservations NewWind3 = new ShowReservations();
         NewWind3.show();
+        clip.stop();
         dispose();
     }//GEN-LAST:event_ViewReservActionPerformed
 
