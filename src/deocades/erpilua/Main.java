@@ -93,6 +93,11 @@ public class Main extends javax.swing.JFrame {
         CancelReserv.setText("Cancel a Reservation");
         CancelReserv.setToolTipText("");
         CancelReserv.setBorder(null);
+        CancelReserv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelReservActionPerformed(evt);
+            }
+        });
         getContentPane().add(CancelReserv, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 330, 50));
 
         GenerateReport.setFont(new java.awt.Font("Poor Richard", 0, 36)); // NOI18N
@@ -130,7 +135,7 @@ public class Main extends javax.swing.JFrame {
     }
     private void ViewReservActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewReservActionPerformed
         // TODO add your handling code here:
-        ShowReservations NewWind3 = new ShowReservations();
+        ViewReservations NewWind3 = new ViewReservations();
         NewWind3.show();
         clip.stop();
         dispose();
@@ -146,6 +151,10 @@ public class Main extends javax.swing.JFrame {
 
     private void GenerateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerateReportActionPerformed
         // TODO add your handling code here:
+        ExecutiveReport NewWind4 = new ExecutiveReport();
+        NewWind4.show();
+        clip.stop();
+        dispose();
     }//GEN-LAST:event_GenerateReportActionPerformed
 
     private void MakeReservActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MakeReservActionPerformed
@@ -153,12 +162,21 @@ public class Main extends javax.swing.JFrame {
         MakeReservation NewWind1 = new MakeReservation();
         NewWind1.show();
         dispose();
+        clip.stop();
     }//GEN-LAST:event_MakeReservActionPerformed
 
     private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
         // TODO add your handling code here:
         BGMusic("src\\deocades\\erpilua\\ACT.wav");
     }//GEN-LAST:event_formWindowGainedFocus
+
+    private void CancelReservActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelReservActionPerformed
+        // TODO add your handling code here:
+        DeleteReservation NewWind2 = new DeleteReservation();
+        NewWind2.show();
+        clip.stop();
+        dispose();
+    }//GEN-LAST:event_CancelReservActionPerformed
 
     /**
      * @param args the command line arguments

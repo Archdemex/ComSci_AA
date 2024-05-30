@@ -173,8 +173,11 @@ public class MakeReservation extends javax.swing.JFrame {
                     Adults = AdultIn.getText(),Children = ChildIn.getText();
             try {
                 FileWriter FW = new FileWriter("LogBook.txt",true);
+                FileWriter FWL = new FileWriter("LogList.txt",true);
                 PrintWriter PW = new PrintWriter(FW);
+                PrintWriter PWL = new PrintWriter(FWL);
 
+                PWL.println(Name + "      " + Number + "     " + Date + "     " + Adults + "                  " + Children);
                 PW.println("Name: " + Name);
                 PW.println("Number: " + Number);
                 PW.println("Date: " + Date);
@@ -182,6 +185,7 @@ public class MakeReservation extends javax.swing.JFrame {
                 PW.println("Number of Children: " + Children);
                 PW.println();
                 
+                PWL.close();
                 PW.close();
             } catch (IOException e) {
                 System.out.print("Error");

@@ -12,12 +12,12 @@ import java.io.IOException;
  *
  * @author Rajah Joevil
  */
-public class ShowReservations extends javax.swing.JFrame {
+public class ViewReservations extends javax.swing.JFrame {
 
     /**
      * Creates new form ShowReservations
      */
-    public ShowReservations() {
+    public ViewReservations() {
         initComponents();
         Display.setBackground(new java.awt.Color(0, 0, 0, 1));
     }
@@ -36,6 +36,7 @@ public class ShowReservations extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Display = new javax.swing.JTextPane();
         Return = new javax.swing.JButton();
+        DeleteReserv = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,9 +67,10 @@ public class ShowReservations extends javax.swing.JFrame {
         Display.setEditable(false);
         Display.setFont(new java.awt.Font("Poor Richard", 0, 24)); // NOI18N
         Display.setForeground(new java.awt.Color(255, 255, 255));
+        Display.setText("hytnhtnrhtfnh\nwrvtsebysy\nybserbystybser\nybesys\nysyb\nyrybe\nybe5t5ybrtun\nrtyhertudr\nybrtu\n");
         jScrollPane1.setViewportView(Display);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 330, 150));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 420, 150));
 
         Return.setFont(new java.awt.Font("Poor Richard", 0, 24)); // NOI18N
         Return.setText("Return");
@@ -78,7 +80,17 @@ public class ShowReservations extends javax.swing.JFrame {
                 ReturnActionPerformed(evt);
             }
         });
-        jPanel1.add(Return, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 120, 40));
+        jPanel1.add(Return, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 120, 40));
+
+        DeleteReserv.setFont(new java.awt.Font("Poor Richard", 0, 24)); // NOI18N
+        DeleteReserv.setText("Delete Reservation");
+        DeleteReserv.setBorder(null);
+        DeleteReserv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteReservActionPerformed(evt);
+            }
+        });
+        jPanel1.add(DeleteReserv, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 180, 40));
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deocades/erpilua/SBG.jpeg"))); // NOI18N
         jPanel1.add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -120,6 +132,13 @@ public class ShowReservations extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_ReturnActionPerformed
 
+    private void DeleteReservActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteReservActionPerformed
+        // TODO add your handling code here:
+        DeleteReservation GoDelete = new DeleteReservation();
+        GoDelete.show();
+        dispose();
+    }//GEN-LAST:event_DeleteReservActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -137,26 +156,28 @@ public class ShowReservations extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ShowReservations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewReservations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ShowReservations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewReservations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ShowReservations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewReservations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ShowReservations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewReservations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ShowReservations().setVisible(true);
+                new ViewReservations().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
+    private javax.swing.JButton DeleteReserv;
     private javax.swing.JTextPane Display;
     private javax.swing.JButton Return;
     private javax.swing.JLabel Title;
