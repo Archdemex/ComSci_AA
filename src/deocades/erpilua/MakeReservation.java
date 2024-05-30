@@ -171,6 +171,10 @@ public class MakeReservation extends javax.swing.JFrame {
         if (confirm == 0) {
             String Name = NameIn.getText(), Number = NumIn.getText(), Date = DateIn.getText(), 
                     Adults = AdultIn.getText(),Children = ChildIn.getText();
+            int Child = Integer.parseInt(Children), BiggerChild = Integer.parseInt(Adults), CProfit, AProfit, TotalProfit = 0;
+            CProfit = Child * 300; AProfit = BiggerChild * 500;
+            TotalProfit = TotalProfit + CProfit + AProfit;
+            
             try {
                 FileWriter FW = new FileWriter("LogBook.txt",true);
                 FileWriter FWL = new FileWriter("LogList.txt",true);
@@ -191,8 +195,10 @@ public class MakeReservation extends javax.swing.JFrame {
                 System.out.print("Error");
             }
             Main BackWin = new Main();
+            ExecutiveReport send = new ExecutiveReport();
+            send.hidden.setText(String.valueOf(TotalProfit));
+            BackWin.Hide.setText(String.valueOf(TotalProfit));
             BackWin.show();
-            JOptionPane.showInternalMessageDialog(null, "Reservation Success!");
             dispose();
         }
     }//GEN-LAST:event_ConfirmActionPerformed

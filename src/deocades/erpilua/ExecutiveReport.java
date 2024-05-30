@@ -7,6 +7,7 @@ package deocades.erpilua;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,6 +44,7 @@ public class ExecutiveReport extends javax.swing.JFrame {
         Label5 = new javax.swing.JLabel();
         ShowProfit = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
+        hidden = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowFocusListener(new java.awt.event.WindowFocusListener() {
@@ -89,27 +91,27 @@ public class ExecutiveReport extends javax.swing.JFrame {
         Label1.setFont(new java.awt.Font("Poor Richard", 1, 24)); // NOI18N
         Label1.setForeground(new java.awt.Color(255, 255, 255));
         Label1.setText("Kids");
-        jPanel1.add(Label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, -1, -1));
+        jPanel1.add(Label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 90, -1, -1));
 
         Label2.setFont(new java.awt.Font("Poor Richard", 1, 24)); // NOI18N
         Label2.setForeground(new java.awt.Color(255, 255, 255));
         Label2.setText("Date");
-        jPanel1.add(Label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, -1, -1));
+        jPanel1.add(Label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, -1, -1));
 
         Label3.setFont(new java.awt.Font("Poor Richard", 1, 24)); // NOI18N
         Label3.setForeground(new java.awt.Color(255, 255, 255));
         Label3.setText("Adults");
-        jPanel1.add(Label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, -1, -1));
+        jPanel1.add(Label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, -1, -1));
 
         Label4.setFont(new java.awt.Font("Poor Richard", 1, 24)); // NOI18N
         Label4.setForeground(new java.awt.Color(255, 255, 255));
         Label4.setText("Name");
-        jPanel1.add(Label4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+        jPanel1.add(Label4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
         Label5.setFont(new java.awt.Font("Poor Richard", 1, 24)); // NOI18N
         Label5.setForeground(new java.awt.Color(255, 255, 255));
         Label5.setText("Number");
-        jPanel1.add(Label5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, -1, -1));
+        jPanel1.add(Label5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
 
         ShowProfit.setFont(new java.awt.Font("Poor Richard", 0, 24)); // NOI18N
         ShowProfit.setText("Report");
@@ -123,6 +125,7 @@ public class ExecutiveReport extends javax.swing.JFrame {
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deocades/erpilua/SBG.jpeg"))); // NOI18N
         jPanel1.add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(hidden, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 320, 80, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 370));
 
@@ -144,12 +147,12 @@ public class ExecutiveReport extends javax.swing.JFrame {
             int CharNum = BR.read();
 
             while (CharNum != -1) {
-                for (int i = 1; i <= CharNum; i++) {
-                    char location = (char) CharNum;
-                    message = message + location;
-                    Display.setText(i + ".  " + message);
-                    CharNum = BR.read();
-                }
+
+                char location = (char) CharNum;
+                message = message + location;
+                Display.setText(message);
+                CharNum = BR.read();
+                
             }
 
         } catch (IOException e) {
@@ -166,6 +169,7 @@ public class ExecutiveReport extends javax.swing.JFrame {
 
     private void ShowProfitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowProfitActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Your profit is $" + hidden.getText());
     }//GEN-LAST:event_ShowProfitActionPerformed
 
     /**
@@ -215,6 +219,7 @@ public class ExecutiveReport extends javax.swing.JFrame {
     private javax.swing.JButton Return;
     private javax.swing.JButton ShowProfit;
     private javax.swing.JLabel Title;
+    public javax.swing.JLabel hidden;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

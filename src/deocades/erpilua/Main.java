@@ -40,6 +40,7 @@ public class Main extends javax.swing.JFrame {
         GenerateReport = new javax.swing.JButton();
         CrabBoi = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
+        Hide = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowFocusListener(new java.awt.event.WindowFocusListener() {
@@ -47,6 +48,7 @@ public class Main extends javax.swing.JFrame {
                 formWindowGainedFocus(evt);
             }
             public void windowLostFocus(java.awt.event.WindowEvent evt) {
+                formWindowLostFocus(evt);
             }
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -118,6 +120,9 @@ public class Main extends javax.swing.JFrame {
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deocades/erpilua/MainBG.jpg"))); // NOI18N
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        Hide.setText("jLabel1");
+        getContentPane().add(Hide, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -152,6 +157,7 @@ public class Main extends javax.swing.JFrame {
     private void GenerateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerateReportActionPerformed
         // TODO add your handling code here:
         ExecutiveReport NewWind4 = new ExecutiveReport();
+        NewWind4.hidden.setText(Hide.getText());
         NewWind4.show();
         clip.stop();
         dispose();
@@ -177,6 +183,11 @@ public class Main extends javax.swing.JFrame {
         clip.stop();
         dispose();
     }//GEN-LAST:event_CancelReservActionPerformed
+
+    private void formWindowLostFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowLostFocus
+        // TODO add your handling code here:
+        clip.stop();
+    }//GEN-LAST:event_formWindowLostFocus
 
     /**
      * @param args the command line arguments
@@ -219,6 +230,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel CrabBoi;
     private javax.swing.JButton Exit;
     private javax.swing.JButton GenerateReport;
+    public javax.swing.JLabel Hide;
     private javax.swing.JButton MakeReserv;
     private javax.swing.JLabel Title;
     private javax.swing.JButton ViewReserv;
